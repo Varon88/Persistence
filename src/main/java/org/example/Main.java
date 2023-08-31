@@ -14,13 +14,26 @@ public class Main {
 
 //        Persistence persistence = (Persistence) Persistence.createEntityManagerFactory("pu");
 //        PersistenceProvider persistenceProvider = persistence.getPersistenceProvider();
-
+//        student student = new student();
+//        student.setId(1);
+//        student.setUserName("Varon Rasiah");
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu"); //This is required as inorder to create an object of EntityManager EMF is required as it follows a factory design patters
         EntityManager em = emf.createEntityManager(); //responsible for managing JPA entries
 
-        student a = em.find(student.class,1); //used to find column 1 within database
-        System.out.println(a);
+//        student student1 = em.find(student.class, 1);
+//        student1.setId(1);
+//        student1.setUserName("Varon Rasiah");
+//        em.persist(student1);
+
+        student student1 = em.find(student.class, 1);
+        student1.setUserName("John Doe");
+        student1.setId(1);
+        em.persist(student1);
+
+
+//        student a = em.find(student.class,1); //used to find column 1 within database
+//        System.out.println(a);
 
         em.close();
         emf.close();
