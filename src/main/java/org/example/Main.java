@@ -4,12 +4,16 @@ package org.example;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.spi.PersistenceProvider;
 
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
+
+//        Persistence persistence = (Persistence) Persistence.createEntityManagerFactory("pu");
+//        PersistenceProvider persistenceProvider = persistence.getPersistenceProvider();
 
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu"); //This is required as inorder to create an object of EntityManager EMF is required as it follows a factory design patters
